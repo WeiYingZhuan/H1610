@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>选项卡切换</title>
 		<style type="text/css">
 		*{
 			margin: 0;
@@ -38,6 +38,25 @@
 				display: none;
 			}
 		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var aBtn = document.getElementById('tab').getElementsByTagName('span');
+				var oDiv = document.getElementById('tab').getElementsByTagName('div');
+			
+			    for(var i=0;i<aBtn.length;i++){
+			    	aBtn[i].index=i;
+			    	aBtn[i].onclick=function(){
+			    		for(var i=0;i<aBtn.length;i++){
+			    			aBtn[i].className = '';
+			    			oDiv[i].style.display = 'none';
+			    		}
+			    		this.className = 'on';
+			    		oDiv[this.index].style.display = 'block';
+			    	}
+			    }
+			
+			}
+		</script>
 	</head>
 	<body>
 		<div id="tab">
